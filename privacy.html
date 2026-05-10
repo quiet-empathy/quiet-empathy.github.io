@@ -28,7 +28,7 @@
   <h3>1.1 ユーザーが提供する情報</h3>
   <ul>
     <li><strong>認証情報</strong>: Apple IDまたはGoogleアカウントの認証識別子</li>
-    <li><strong>プロフィール情報</strong>: ニックネーム、生年月日、性別</li>
+    <li><strong>プロフィール情報</strong>: ニックネーム、生年月日、性別、居住地（都道府県）</li>
     <li><strong>興味タグ</strong>: ユーザーが選択した興味・関心カテゴリ</li>
     <li><strong>チャット内容</strong>: チャットルーム内で送信されたメッセージ</li>
   </ul>
@@ -38,6 +38,7 @@
     <li><strong>デバイス情報</strong>: 利用プラットフォーム（iOS / Android）</li>
     <li><strong>プッシュ通知トークン</strong>: 通知配信用のデバイストークン</li>
     <li><strong>違反履歴</strong>: AIモデレーションにより不適切と判断されたメッセージの検出記録（違反の種類、重大度スコア）</li>
+    <li><strong>アクセスログ</strong>: IPアドレス、User-Agent等のサーバアクセス情報（サービス運用および不正アクセス検知のため）</li>
   </ul>
 
   <h2>2. 情報の利用目的</h2>
@@ -63,7 +64,7 @@
     <tr><th>サービス</th><th>提供元</th><th>目的</th><th>送信される情報</th></tr>
     <tr><td>Sign in with Apple</td><td>Apple Inc.</td><td>認証</td><td>認証トークン</td></tr>
     <tr><td>Google Sign-In</td><td>Google LLC</td><td>認証</td><td>認証トークン</td></tr>
-    <tr><td>OpenAI Moderation API</td><td>OpenAI, Inc.</td><td>コンテンツの安全性チェック</td><td>チャットメッセージの内容</td></tr>
+    <tr><td>OpenAI API</td><td>OpenAI, Inc.</td><td>コンテンツモデレーション・マッチング（興味タグの埋め込み生成）・話題提案の生成</td><td>チャットメッセージの内容、興味タグ</td></tr>
     <tr><td>Firebase Cloud Messaging</td><td>Google LLC</td><td>プッシュ通知の配信</td><td>デバイストークン</td></tr>
     <tr><td>RevenueCat</td><td>RevenueCat, Inc.</td><td>サブスクリプション管理</td><td>購入情報</td></tr>
   </table>
@@ -73,7 +74,7 @@
   <p>電気通信事業法第27条の12に基づき、本サービスが利用者の端末から外部に送信する情報は以下のとおりです。</p>
   <table>
     <tr><th>送信先</th><th>送信される情報</th><th>利用目的</th></tr>
-    <tr><td>OpenAI, Inc.</td><td>チャットメッセージ</td><td>コンテンツモデレーション</td></tr>
+    <tr><td>OpenAI, Inc.</td><td>チャットメッセージ、興味タグ</td><td>コンテンツモデレーション、マッチング（興味タグの埋め込み生成）、話題提案の生成</td></tr>
     <tr><td>Google LLC (Firebase)</td><td>デバイストークン</td><td>プッシュ通知</td></tr>
     <tr><td>RevenueCat, Inc.</td><td>購入トランザクション情報</td><td>サブスクリプション管理</td></tr>
   </table>
